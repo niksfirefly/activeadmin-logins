@@ -62,7 +62,7 @@ end
             class_line = "class User < ApplicationRecord"
           end
 
-          inject_into_file 'app/models/user.rb', after: "#{class_line}\n" do <<-'RUBY'
+          inject_into_file 'app/models/admin_user.rb', after: "#{class_line}\n" do <<-'RUBY'
 
   has_many :user_logins, dependent: :destroy
 
