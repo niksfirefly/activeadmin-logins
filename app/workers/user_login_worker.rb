@@ -5,7 +5,7 @@ class UserLoginWorker
   include Sidekiq::Worker
 
   def perform(user_id, ip, user_agent)
-    user = User.find(user_id)
+    user = AdminUser.find(user_id)
 
     geo_ip_city = geo_ip.city(ip)
 
